@@ -1,4 +1,4 @@
-import Pages.BaseFunc;
+import pages.BaseFunc;
 import org.junit.jupiter.api.Test;
 
 public class PageObjectTest {

@@ -1,24 +1,23 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BaseFunc {
     private WebDriver driver;
 
     public BaseFunc() {
-        System.setProperty("webdriver.chrome.driver", "c:/drivers/chromedriver.exe");
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver", "c:/drivers/geckodriver.exe");
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
     }
 
     public void goToUrl(String url) {
         if (url.startsWith("http://") || url.startsWith("https://")) {
-
-        } else {
-            url = "http://" + url;
-
+            else{
+                url = "http://" + url;
+            }
+            driver.get(url);
         }
-        driver.get(url);
     }
 }
